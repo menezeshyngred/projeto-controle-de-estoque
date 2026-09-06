@@ -1,0 +1,20 @@
+{
+  "name": "projeto-integrador",
+  "version": "1.0.0",
+  "description": "FACULDADE GRAN (https://faculdade.grancursosonline.com.br/) Projeto Disciplina Projeto Integrador",
+  "homepage": "https://github.com/menezeshyngred/projeto-controle-de-estoque#readme",
+  "bugs": {
+    "url": "https://github.com/menezeshyngred/projeto-controle-de-estoque/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menezeshyngred/projeto-controle-de-estoque.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
