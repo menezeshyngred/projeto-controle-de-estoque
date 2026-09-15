@@ -21,4 +21,15 @@ db.exec(`
     )
 `);
 
+db.exec(`
+    CREATE TABLE IF NOT EXISTS produto_fornecedor (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        produto_id INTEGER NOT NULL,
+        fornecedor_id INTEGER NOT NULL,
+        FOREIGN KEY (produto_id) REFERENCES produtos(id),
+        FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id),
+        UNIQUE (produto_id, fornecedor_id)
+    )
+`);
+
 module.exports = db;
