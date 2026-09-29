@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+
 const db = require('./database/database');  //importa o banco de dados
 
 const produtoRoutes = require('./routes/produtoRoutes');  //importa as rotas de produtos
@@ -9,6 +11,7 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());  //permite que o Express entenda requisições com JSON
 
 app.use(produtoRoutes);  //usa as rotas de produtos
