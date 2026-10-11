@@ -4,10 +4,8 @@ function Associacoes() {
 
     const [produtos, setProdutos] = useState([]);
     const [fornecedores, setFornecedores] = useState([]);
-
     const [produtoSelecionado, setProdutoSelecionado] = useState('');
     const [fornecedorSelecionado, setFornecedorSelecionado] = useState('');
-    
     const [fornecedoresDoProduto, setFornecedoresDoProduto] = useState([]);
     const [produtoDoFornecedor, setProdutoDoFornecedor] = useState([]);
 

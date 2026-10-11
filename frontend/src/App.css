@@ -1,38 +1,460 @@
-.App {
-  text-align: center;
+/* configurações gerais */
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5fb;
+  color: #243650;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button, input, select, textarea {
+  font: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
+button {
+  cursor: pointer;
+}
+
+/*layout principal */
+.layout-app {
+  display: flex;
   min-height: 100vh;
+}
+
+/*menu lateral*/
+.sidebar {
+  width: 235px;
+  min-width: 235px;
+  min-height: 100vh;
+  background: #11243b;
+  color: white;
   display: flex;
   flex-direction: column;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 76px;
+  min-height: 76px;
+  padding: 20px;
+  gap: 10px;
+  font-size: 21px;
+  font-weight: bold;
+  white-space: nowrap;
+  border-bottom: 1px solid #263950;
+
+}
+
+.logo-icone {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: #3690ff;
+}
+
+.logo-icone svg {
+  display: block;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 22px 12px;
+}
+
+.sidebar-menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 14px;
+  color: #d5deeb;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.sidebar-menu button svg {
+  flex-shrink: 0;
+}
+
+.sidebar-menu button span {
+  width: auto;
+  font-size: 15px;
+  text-align: left;
+}
+
+.sidebar-menu button:hover {
+  background: #243d5b;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-menu button.active {
+  background: #1670ee;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sidebar-rodape {
+  margin-top: auto;
+  padding: 20px 16px;
+  font-size: 11px;
+  color: #a8b8cc;
+  border-top: 1px solid #263950;
+}
+
+/*area de conteudo*/
+.conteudo-app {
+  flex: 1;
+  min-width: 0;
+}
+
+.barra-superior {
+  min-height: 64px;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  border-bottom: 1px solid #e1e9f3;
+  color: #60728c;
+  font-size: 14px;
+}
+
+.usuario {
+  color: #294466;
+  font-weight: 600;
+}
+
+.pagina-conteudo {
+  padding: 28px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/*títulos*/
+.pagina-conteudo h1 {
+  color: #1e3555;
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.pagina-conteudo h2 {
+  color: #1e3555;
+  font-size: 22px;
+}
+
+.pagina-conteudo h3 {
+  color: #294466;
+  font-size: 17px;
+}
+
+/*formularios em cartoes*/
+.pagina-conteudo form {
+  background: white;
+  padding: 22px;
+  border: 1px solid #e0e8f3;
+  border-radius: 9px;
+  box-shadow: 0 3px 12px rgba(29, 57, 91 0.04);
+  margin-bottom: 24px;
+}
+
+.pagina-conteudo label {
+  display: block;
+  margin-bottom: 7px;
+  color: #334967;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pagina-conteudo input, .pagina-conteudo select, .pagina-conteudo textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #d6e1ef;
+  border-radius: 6px;
+  color: #243650;
+  font-size: 14px;
+}
+
+.pagina-conteudo input:focus, .pagina-conteudo select:focus, .pagina-conteudo textarea:focus {
+  outline: none;
+  border-color: #2479f2;
+  box-shadow: 0 0 0 3px rgba(36, 121, 242, 0.1);
+}
+
+/*botoes*/
+.pagina-conteudo button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #1670ee;
+  color: white;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.pagina-conteudo button:hover {
+  background: #0959c9;
+}
+
+/*tabelas*/
+.pagina-conteudo table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e0e8f3;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.pagina-conteudo th, .pagina-conteudo td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #e8eef6;
+  text-align: left;
+}
+
+.pagina-conteudo th {
+  background: #f3f7fc;
+  color: #506582;
+  font-weight: 700;
+}
+
+.pagina-conteudo tbody tr:hover {
+  background: #f7faff;
+}
+
+/*listas*/
+.pagina-conteudo li {
+  margin-bottom: 10px;
+}
+
+/*responsivo*/
+@media (max-width: 760px) {
+  .sidebar-logo {
+    justify-content: center;
+    padding: 10px;
+}
+
+  .sidebar-logo span:not(.logo-icone) {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+.logo-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.logo-icone svg {
+  display: block;
+}
+
+.sidebar-logo > span:last-child {
+  line-height: 1;
+}
+
+  .sidebar-logo span:not(.logo-icone),
+  .sidebar-menu button:not(.ativo) {
+    font-size: 0;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .sidebar-logo span:not(.logo-icone) {
+    display: none;
+  }
+
+  .sidebar-menu button {
+    justify-content: center;
+    padding: 13px 14px;
+    gap: 0;
+  }
+  .sidebar-menu button span {
+    font-size: 18px;
+  }
+  .sidebar-rodape {
+    display: none;
+  }
+  .pagina-conteudo {
+    padding: 18px 12px;
+  }
+  .barra-superior {
+    padding: 14px;
+  }
+  .pagina-conteudo table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+/*pagina do produto*/
+.produto-pagina {
+  width: 100%;
+}
+
+.titulo-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.titulo-pagina h1 {
+  margin-bottom: 6px;
+}
+
+.titulo-pagina p {
+  margin: 0;
+  color: #71829b;
+  font-size: 14px;
+}
+
+.produtos-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 20px;
+  align-items: start;
+}
+
+.card-produtos, .card-formulario {
+  min-width: 0;
+  width: 100%;
+}
+
+.card-produtos, .card-formulario {
+  min-width: 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e0e8f3;
+  border-radius: 9px;
+  box-shadow: 0 3px 12px rgba(29, 57, 91, 0.04);
+}
+
+.card-produtos h2, .card-formulario  h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.tabela-container {
+  display: block;
+  width: 100px;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.card-produtos table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 700px;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.card-produtos th,
+.card-formulario td {
+  padding: 12px;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.acoes-produto {
+  white-space: nowrap;
+}
+
+.pagina-conteudo .acoes-produto button {
+  margin: 2px;
+  padding: 7px 9px;
+}
+
+.pagina-conteudo .acoes-produto .botao-excluir {
+  background: #ef4444;
+}
+
+.pagina-conteudo .acoes-produto .botao-excluir:hover {
+  background: #dc2626;
+}
+
+.card-formulario form {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.card-formulario form > div {
+  margin-bottom: 16px;
+}
+
+.card-formulario textarea {
+  resize: vertical;
+}
+
+.pagina-conteudo .botao-salvar {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.pagina-conteudo .botao-cancelar {
+  width: 100px;
+  margin: 5px 0;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.pagina-conteudo .botao-cancelar:hover {
+  background: #cbd5e1;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 76px;
+  min-height: 76px;
+  padding: 20px;
+  gap: 10px;
+  font-size: 21px;
+  font-weight: bold;
+  white-space: nowrap;
+  border-bottom: 1px solid #263950;
+}
+
+.logo-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: #3690ff;
+}
+
+@media (max-width: 1050px) {
+  .produtos-layout {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
