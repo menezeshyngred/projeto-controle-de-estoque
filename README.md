@@ -1,16 +1,16 @@
-EstoquePro (Sistema de Controle de Estoque)
+# EstoquePro (Sistema de Controle de Estoque)
 
 Projeto Integrador — Faculdade GRAN
 
 Projeto acadêmico desenvolvido para a disciplina **Projeto Integrador** da Faculdade GRAN, com o objetivo de desenvolver uma aplicação web para o gerenciamento de produtos e fornecedores.
 
-# Sobre o Projeto
+## Sobre o Projeto
 
 O **EstoquePro** é um sistema web de controle de estoque que permite cadastrar, consultar, editar e excluir produtos e fornecedores, além de gerenciar as associações entre eles.
 
 A aplicação foi desenvolvida com React no frontend, Node.js e Express no backend e SQLite para armazenamento dos dados.
 
-# Objetivos
+## Objetivos
 
 - Desenvolver uma aplicação web para gerenciamento de produtos e fornecedores.
 - Implementar operações CRUD (criar, consultar, atualizar e excluir).
@@ -18,44 +18,44 @@ A aplicação foi desenvolvida com React no frontend, Node.js e Express no backe
 - Armazenar e consultar dados utilizando um banco de dados SQLite.
 - Implementar um relacionamento muitos para muitos entre produtos e fornecedores.
 
-# Funcionalidades
+## Funcionalidades
 
-## Produtos
+### Produtos
 - Cadastrar produtos.
 - Listar produtos cadastrados.
 - Editar informações dos produtos.
 - Excluir produtos.
 
-## Fornecedores
+### Fornecedores
 - Cadastrar fornecedores.
 - Listar fornecedores cadastrados.
 - Pesquisar fornecedores por nome ou CNPJ.
 - Editar informações dos fornecedores.
 - Excluir fornecedores.
 
-## Associação entre produtos e fornecedores
+### Associação entre produtos e fornecedores
 - Associar produtos a fornecedores.
 - Consultar os fornecedores associados a um produto.
 - Consultar os produtos associados a um fornecedor.
 - Desassociar produtos e fornecedores.
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-## Frontend
+### Frontend
 - React
 - JavaScript
 - HTML
 - CSS
 - Lucide React
 
-## Backend
+### Backend
 - Node.js
 - Express
 - JavaScript
 - SQLite
 - better-sqlite3
 
-## Ferramentas
+### Ferramentas
 - Visual Studio Code
 - Insomnia
 - npm
@@ -91,18 +91,18 @@ EstoquePro/
 └── README.md
 ```
 
-# Pré-requisitos
+## Pré-requisitos
 
 Para executar o projeto, é necessário ter instalado:
 
 - [Node.js e npm](https://nodejs.org/)
 - [Visual Studio Code](https://code.visualstudio.com/) (opcional, mas recomendado)
 
-# Como Executar o Projeto
+## Como Executar o Projeto
 
 O frontend e o backend são executados em terminais separados.
 
-## 1. Clonar o repositório
+### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/menezeshyngred/projeto-controle-de-estoque.git
@@ -114,7 +114,7 @@ Entre na pasta do projeto:
 cd EstoquePro
 ```
 
-## 2. Executar o backend
+### 2. Executar o backend
 
 Abra um terminal e execute:
 
@@ -130,7 +130,7 @@ O backend será iniciado na porta **3000**:
 http://localhost:3000
 ```
 
-## 3. Executar o frontend
+### 3. Executar o frontend
 
 Abra um **segundo terminal** na pasta principal do projeto e execute:
 
@@ -148,7 +148,7 @@ http://localhost:3001
 
 Mantenha os dois terminais abertos enquanto utiliza o sistema.
 
-# Banco de Dados
+## Banco de Dados
 
 O projeto utiliza o SQLite para armazenar as informações.
 
@@ -160,13 +160,13 @@ O banco de dados possui três tabelas principais:
 
 O relacionamento entre produtos e fornecedores é do tipo **muitos para muitos (N:N)**. Isso significa que um produto pode estar associado a vários fornecedores e um fornecedor pode fornecer vários produtos.
 
-# Testes
+## Testes
 
 As requisições do backend foram testadas utilizando o Insomnia.
 
 Foram verificadas as funcionalidades de cadastro, consulta, atualização e exclusão de produtos e fornecedores, além das operações de associação e consulta entre eles.
 
-# Instituição
+## Instituição
 
 **Faculdade GRAN**
 
@@ -174,6 +174,6 @@ Site institucional: https://faculdade.grancursosonline.com.br/
 
 Disciplina: Projeto Integrador.
 
-# Licença
+## Licença
 
 Projeto desenvolvido para fins acadêmicos e educacionais.
