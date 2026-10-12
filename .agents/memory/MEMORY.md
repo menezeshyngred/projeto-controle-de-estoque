@@ -1,0 +1,1 @@
+- [Preview port discovery](preview-port-discovery.md) — workflow port discovery can regenerate mappings; avoid exposing an internal API ahead of the frontend.

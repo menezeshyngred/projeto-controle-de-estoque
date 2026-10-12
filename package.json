@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "postinstall": "npm install --prefix backend && npm install --prefix frontend",
+    "start": "node scripts/start.js",
+    "build": "npm run build --prefix frontend"
+  },
   "dependencies": {
     "lucide-react": "^1.55.0"
   }

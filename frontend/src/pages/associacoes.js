@@ -25,8 +25,8 @@ function Associacoes() {
             setCarregando(true);
 
             const [resProdutos, resFornecedores] = await Promise.all([
-                fetch("http://localhost:3000/produtos"),
-                fetch("http://localhost:3000/fornecedores")
+                fetch("/api/produtos"),
+                fetch("/api/fornecedores")
             ]);
 
             if (!resProdutos.ok || !resFornecedores.ok) {
@@ -42,7 +42,7 @@ function Associacoes() {
             const resultados = await Promise.all(
                 dadosProdutos.map(async (produto) => {
                     const resposta = await fetch(
-                        `http://localhost:3000/produtos/${produto.id}/fornecedores`
+                        `/api/produtos/${produto.id}/fornecedores`
                     );
 
                     if (!resposta.ok) {
@@ -84,7 +84,7 @@ function Associacoes() {
 
         try {
             const resposta = await fetch(
-                "http://localhost:3000/associacoes",
+                "/api/associacoes",
                 {
                     method: "POST",
                     headers: {
@@ -132,7 +132,7 @@ function Associacoes() {
 
         try {
             const resposta = await fetch(
-                "http://localhost:3000/associacoes",
+                "/api/associacoes",
                 {
                     method: "DELETE",
                     headers: {
@@ -179,7 +179,7 @@ function Associacoes() {
 
         try {
             const resposta = await fetch(
-                `http://localhost:3000/produtos/${produtoConsulta}/fornecedores`
+                `/api/produtos/${produtoConsulta}/fornecedores`
             );
 
             const dados = await resposta.json();
@@ -206,7 +206,7 @@ function Associacoes() {
 
         try {
             const resposta = await fetch(
-                `http://localhost:3000/fornecedores/${fornecedorConsulta}/produtos`
+                `/api/fornecedores/${fornecedorConsulta}/produtos`
             );
 
             const dados = await resposta.json();

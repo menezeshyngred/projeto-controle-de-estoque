@@ -22,7 +22,7 @@ function Fornecedores(){
 
     const listarFornecedores = async () => {
         try {
-            const resposta = await fetch('http://localhost:3000/fornecedores');
+            const resposta = await fetch('/api/fornecedores');
 
             const dados = await resposta.json();
 
@@ -51,7 +51,7 @@ useEffect(() => {
                 });
 
             const resposta = await fetch(
-                `http://localhost:3000/fornecedores/${fornecedorEditando.id}`,
+                `/api/fornecedores/${fornecedorEditando.id}`,
                 {
                     method: 'PUT',
                     headers: {
@@ -79,7 +79,7 @@ useEffect(() => {
             } else {
                 // cadastrar fornecedor
                 const resposta = await fetch(
-                    'http://localhost:3000/fornecedores',
+                    '/api/fornecedores',
                     {
                         method: 'POST',
                         headers: {
@@ -132,7 +132,7 @@ useEffect(() => {
 
         try {
             const resposta = await fetch(
-                `http://localhost:3000/fornecedores/${id}`,
+                `/api/fornecedores/${id}`,
                 {
                     method: 'DELETE'
                 }

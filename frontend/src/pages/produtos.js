@@ -16,7 +16,7 @@ function Produto() {
         if (produtoEditando) {
             try {
                 const resposta = await fetch(
-                    `http://localhost:3000/produtos/${produtoEditando.id}`,
+                    `/api/produtos/${produtoEditando.id}`,
                     {
                         method: 'PUT',
                         headers: {
@@ -59,7 +59,7 @@ function Produto() {
 
         try {
             const resposta = await fetch(
-                'http://localhost:3000/produtos',
+                '/api/produtos',
                 {
                     method: 'POST',
                     headers: {
@@ -100,7 +100,7 @@ function Produto() {
     const listarProdutos = async () => {
         try {
             const resposta = await fetch(
-                'http://localhost:3000/produtos'
+                '/api/produtos'
             );
 
             const dados = await resposta.json();
@@ -142,7 +142,7 @@ function Produto() {
 
         try {
             const resposta = await fetch(
-                `http://localhost:3000/produtos/${id}`,
+                `/api/produtos/${id}`,
                 {
                     method: 'DELETE'
                     }

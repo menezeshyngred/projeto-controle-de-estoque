@@ -9,10 +9,14 @@ const associacaoRoutes = require('./routes/associacaoRoutes'); //importa as rota
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());  //permite que o Express entenda requisições com JSON
+
+app.use('/api', produtoRoutes);
+app.use('/api', fornecedorRoutes);
+app.use('/api', associacaoRoutes);
 
 app.use(produtoRoutes);  //usa as rotas de produtos
 app.use(fornecedorRoutes);  //usa as rotas de fornecedores
@@ -22,6 +26,6 @@ app.get('/', (req, res) => {           //rota raiz da API
     res.json({ messagem: 'API do Controle de Estoque funcionando!' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, process.env.HOST || '0.0.0.0', () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
