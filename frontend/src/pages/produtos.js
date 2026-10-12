@@ -1,3 +1,4 @@
+import { Pencil, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
 function Produto() {
@@ -222,17 +223,20 @@ function Produto() {
                                     <td className="acoes-produto">
                                         <button
                                             type="button"
-                                            onClick={() => editarProduto(produto)} 
+                                            onClick={() => editarProduto(produto)}
+                                            title="Editar produto"
+                                            aria-label="Editar produto"
                                         >
-                                            Editar
+                                            <Pencil size={16}/>
                                         </button>
 
                                         <button
                                             type="button"
-                                            className="botao-excluir"
                                             onClick={() => deletarProduto(produto.id)}
+                                            title="Excluir produto"
+                                            aria-label="Excluir produto"
                                         >
-                                            Excluir
+                                            <Trash2 size={16}/>
                                         </button>
                                     </td>
                                 </tr>

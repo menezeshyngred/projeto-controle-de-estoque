@@ -124,7 +124,7 @@ button {
   min-height: 64px;
   padding: 16px 28px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 16px;
   background: white;
@@ -360,14 +360,15 @@ button {
 
 .tabela-container {
   display: block;
-  width: 100px;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
   overflow-x: auto;
 }
 
 .card-produtos table {
-  display: table !important;
-  width: 100% !important;
+  display: table;
+  width: 100%;
   min-width: 700px;
   table-layout: auto;
   border-collapse: collapse;
@@ -378,7 +379,7 @@ button {
   padding: 12px;
   text-align: left;
   white-space: normal;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .acoes-produto {
@@ -457,4 +458,452 @@ button {
   .produtos-layout {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* barra de pesquisa e icnoes*/
+
+.pesquisa-fornecedores {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0 20px;
+    padding: 0 12px;
+    border: 1px solid #d5deea;
+    border-radius: 8px;
+    background: #fff;
+    color: #64748b;
+}
+
+.pesquisa-fornecedores input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+.acoes-fornecedor {
+    white-space: nowrap;
+}
+
+.acoes-fornecedor button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.botao-editar {
+    color: #3690ff;
+    background: #eaf3ff;
+}
+
+.botao-excluir {
+    color: #dc4545;
+    background: #fff0f0;
+}
+
+/* Formulário de cadastro de fornecedores */
+.form-fornecedores {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Espaçamento interno dos campos */
+.form-fornecedores input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d5deea;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Espaco entre os botoes */
+.form-fornecedores button {
+    align-self: flex-start;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagina-associacoes {
+    width: 100%;
+    min-width: 0;
+}
+
+.card-associacoes {
+    min-width: 0;
+    padding: 22px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #e0e8f3;
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(29, 57, 91, 0.04);
+}
+
+.card-associacoes h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #24364b;
+}
+
+.form-associacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.campo-associacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.campo-associacao label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo-associacao select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5deea;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.botoes-associacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    grid-column: 1 / -1;
+}
+
+.botao-associar,
+.botao-desassociar,
+.botao-consultar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.botao-associar {
+    background: #2563eb;
+    color: #fff;
+}
+
+.botao-desassociar {
+    background: #fff0f0;
+    color: #c53030;
+}
+
+.botao-consultar {
+    background: #eaf3ff;
+    color: #2563eb;
+}
+
+.consultas-associacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.lista-associacoes {
+    padding: 0;
+    margin: 16px 0 0;
+    list-style: none;
+}
+
+.lista-associacoes li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e8edf4;
+}
+
+.lista-associacoes li span:last-child {
+    color: #64748b;
+    font-size: 13px;
+}
+
+@media (max-width: 760px) {
+    .form-associacoes,
+    .consultas-associacoes {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card-associacoes {
+        padding: 16px;
+    }
+}
+
+
+.pagina-associacoes {
+    width: 100%;
+    min-width: 0;
+}
+
+.card-associacoes {
+    min-width: 0;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e0e8f3;
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(29, 57, 91, 0.04);
+}
+
+.cabecalho-associacoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.cabecalho-associacoes h3,
+.card-associacoes h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 16px;
+    font-size: 18px;
+}
+
+.cabecalho-associacoes h3 {
+    margin: 0;
+}
+
+.botao-nova-associacao,
+.botao-consultar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    color: #fff;
+    background: #2563eb;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.form-associacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e0e8f3;
+    border-radius: 8px;
+}
+
+.campo-associacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.campo-associacao label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo-associacao select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px;
+    background: #fff;
+    border: 1px solid #d5deea;
+    border-radius: 7px;
+}
+
+.form-associacoes > button {
+    justify-self: start;
+    grid-column: 1 / -1;
+}
+
+.pesquisa-associacoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 0 12px;
+    color: #64748b;
+    border: 1px solid #d5deea;
+    border-radius: 8px;
+}
+
+.pesquisa-associacoes input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+.botao-excluir-associacao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: #dc4545;
+    background: #fff0f0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.consultas-associacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.consultas-associacoes .card-associacoes {
+    margin-bottom: 0;
+}
+
+.lista-associacoes {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-associacoes li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5eaf1;
+}
+
+@media (max-width: 760px) {
+    .form-associacoes,
+    .consultas-associacoes {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-associacoes > button {
+        grid-column: 1;
+    }
+
+    .card-associacoes {
+        padding: 14px;
+    }
+
+    .tabela-container {
+        overflow-x: auto;
+    }
+}
+
+.consultas-associacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.consultas-associacoes .card-associacoes {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.consultas-associacoes .campo-associacao {
+    margin-bottom: 14px;
+}
+
+.consultas-associacoes .botao-consultar {
+    margin-bottom: 18px;
+}
+
+.tabela-consultas {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-consultas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-consultas th,
+.tabela-consultas td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5eaf1;
+    overflow-wrap: anywhere;
+}
+
+.tabela-consultas th {
+    background: #f8fafc;
+    font-weight: 600;
+}
+
+@media (max-width: 760px) {
+    .consultas-associacoes {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.perfil-usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.avatar-usuario {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e7effb;
+  color: #315d91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dados-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dados-usuario small {
+  color: #71839b;
+  font-size: 12px;
+}
+
+.seta-perfil {
+  color: #71839b;
 }

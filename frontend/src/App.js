@@ -5,7 +5,7 @@ import Associacoes from './pages/associacoes';
 import Fornecedores from './pages/fornecedores';
 import Produtos from './pages/produtos';
 
-import { Link as LinkIcon, Package, Truck } from "lucide-react";
+import { ChevronDown, Link as LinkIcon, Package, Truck, UserRound } from "lucide-react";
 
 function App() {
   const [page, setPage] = useState('produtos');
@@ -57,8 +57,18 @@ function App() {
 
   <div className="conteudo-app">
     <header className="barra-superior">
-      <span>Gestão de Estoque</span>
-      <span className="usuario">Administrador</span>
+      <div className="perfil-usuario">
+        <div className="avatar-usuario">
+          <UserRound size={22} />
+        </div>
+
+        <div className="dados-usuario">
+          <span className="usuario">Administrador</span>
+          <small>Perfil de acesso</small>
+        </div>
+
+        <ChevronDown size={16} className="seta-perfil" />
+      </div>
     </header>
 
     <main className="pagina-conteudo">
