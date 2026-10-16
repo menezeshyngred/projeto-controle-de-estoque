@@ -6,3 +6,6 @@ coverage/
 .env.*
 !.env.example
 /generated-artifacts/
+*.sqlite
+*.sqlite3
+*.db
